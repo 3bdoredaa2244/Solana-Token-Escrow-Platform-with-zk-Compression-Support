@@ -1,0 +1,27 @@
+[package]
+name = "funhi-escrow"
+version = "0.1.0"
+description = "Escrow contract for the funhi marketplace with ZK compression support"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "funhi_escrow"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = "0.31.0"
+anchor-spl = "0.31.0"
+spl-token = { version = "4.0", features = ["no-entrypoint"] }
+spl-account-compression = "0.5.0"
+solana-program = "1.18.17"
+borsh = "1.0"
+
+[dev-dependencies]
+anchor-test = "0.31.0"
