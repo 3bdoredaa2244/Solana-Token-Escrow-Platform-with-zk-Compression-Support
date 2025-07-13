@@ -1,0 +1,32 @@
+{
+  "name": "funhi-escrow-platform",
+  "version": "1.0.0",
+  "description": "Decentralized escrow system for the funhi marketplace with ZK compression support",
+  "scripts": {
+    "install:all": "npm install && cd contract && npm install && cd ../backend && npm install && cd ../frontend && npm install",
+    "build": "cd contract && anchor build",
+    "deploy": "cd contract && anchor deploy",
+    "test": "cd contract && anchor test",
+    "backend": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm run dev",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "start": "npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/funhi/escrow-platform"
+  },
+  "keywords": [
+    "solana",
+    "escrow",
+    "zk-compression",
+    "defi",
+    "marketplace",
+    "blockchain"
+  ],
+  "author": "Funhi Platform",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

@@ -1,0 +1,24 @@
+[package]
+name = "funhi-escrow"
+version = "0.1.0"
+description = "Escrow contract for the funhi marketplace with ZK compression support"
+
+[features]
+seeds = false
+skip-lint = false
+
+[programs.localnet]
+funhi_escrow = "FuNHi9ZbGjE3Tq8W8u9K6V1xZr4H7sTpNqB5dJ3YtL2E"
+
+[programs.devnet]
+funhi_escrow = "FuNHi9ZbGjE3Tq8W8u9K6V1xZr4H7sTpNqB5dJ3YtL2E"
+
+[programs.mainnet]
+funhi_escrow = "FuNHi9ZbGjE3Tq8W8u9K6V1xZr4H7sTpNqB5dJ3YtL2E"
+
+[provider]
+cluster = "localnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
