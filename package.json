@@ -1,0 +1,42 @@
+{
+  "name": "funhi-escrow-platform",
+  "version": "1.0.0",
+  "description": "Escrow system for the Funhi platform with token-bound fulfillment",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "install:all": "npm install && npm run install:backend && npm run install:frontend",
+    "install:backend": "cd backend && npm install",
+    "install:frontend": "cd frontend && npm install",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build": "npm run build:backend && npm run build:frontend",
+    "build:backend": "cd backend && npm run build",
+    "build:frontend": "cd frontend && npm run build",
+    "deploy:contract": "cd contract && anchor deploy",
+    "test:contract": "cd contract && anchor test"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/funhi-platform/escrow-system"
+  },
+  "keywords": [
+    "solana",
+    "escrow",
+    "blockchain",
+    "defi",
+    "anchor"
+  ],
+  "author": "Funhi Platform",
+  "license": "MIT"
+}
